@@ -2,6 +2,9 @@
 
 A tracking app for tasks where users can create, edit, and move tasks between different columns (e.g. "To Do", "In Progress", "Done").
 
+# Screenshoot
+<img src="https://user-images.githubusercontent.com/41310314/223551023-0835fd9f-5d0d-42d2-9125-13d6a4cb4c0c.png" width=220/> <img src="https://user-images.githubusercontent.com/41310314/223551067-d2219e63-c43f-46a8-941e-ac35199dd9ae.png" width=220/> <img src="https://user-images.githubusercontent.com/41310314/223551119-3b3c2fef-f1af-47e0-825d-df43ffdde45c.png" width=220/> <img src="https://user-images.githubusercontent.com/41310314/223551173-dafac1f3-975d-4d5e-ae23-13b8b1853805.png" width=220/>
+
 # Authentication
 Our app will use Google SignIn Authentication method, no need to register manually.
 
