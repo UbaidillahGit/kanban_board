@@ -4,10 +4,12 @@ A tracking app for tasks.
 where users can create, edit, and move tasks between different columns (e.g. "To Do", "In Progress", "Done").
 
 # Authentication
-our app will use Google SignIn feature, no need to register manually
+Our app will use Google SignIn authentication method, no need to register manually
+
+# Database
+We're using Firebase firestore to record the data in real-time
 
 # Architeture
-
 using DDD (Domain-Drivers Design) will have four layer
 - "Presentation"
     which is handle all of the widgets and state of the Widget's.
@@ -24,19 +26,17 @@ using DDD (Domain-Drivers Design) will have four layer
     This layer will hold the data transfers both "remote" or "local", each data call will be covered on a "repository" class
 
 # State Managemet
-
 State management using BLoC with Freezed while also implement the code generation to save some of lines, which is also support
 for union types and pattern-matching
 
 # Routing
-
 auto_route with it's code generation will handle our overall routing app
 
 # Testing
-the
+The app is tested with the support of Mockito package with code generation
 
 # APK file
-- [https://drive.google.com/drive/folders/1Q6IlcobEZbmtcPzeVvutXv84MVNnCOm_?usp=sharing]
+- https://drive.google.com/drive/folders/1Q6IlcobEZbmtcPzeVvutXv84MVNnCOm_?usp=sharing
 
 ## Getting Started
 
