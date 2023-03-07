@@ -1,0 +1,93 @@
+{
+    "name": "Example project",
+    "owner": "seremony.greyz@gmail.com",
+    "collaborator": [
+        {
+            "email": "example@mail.com",
+            "photo_url": null
+        },
+        {
+            "email": "maryjane@mail.com",
+            "photo_url": null
+        }
+    ],
+    "description": "Example project description",
+    "to_do": {
+        "group_name": "To Do",
+        "tasks": [
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "name": null,
+                    "photo_url": null
+                },
+                "current_board": "to_do",
+                "description": "Example Description 1",
+                "label": "ui_ux",
+                "task_name": "Example To-Do 1"
+            },
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "name": null,
+                    "photo_url": null
+                },
+                "current_board": "to_do",
+                "description": "Example Description 2",
+                "label": "ui_ux",
+                "task_name": "Example To-Do 2"
+            }
+        ]
+    },
+    "in_progress": {
+        "group_name": "In Progress",
+        "tasks": [
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "photo_url": null
+                },
+                "current_board": "in_progress",
+                "description": "Example Description 1",
+                "label": "bug",
+                "task_name": "Example In-Progress 1"
+            },
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "name": null,
+                    "photo_url": null
+                },
+                "current_board": "in_progress",
+                "description": "Example Description 1",
+                "label": "bug",
+                "task_name": "Example In-Progress 2"
+            }
+        ]
+    },
+    "done": {
+        "group_name": "Done",
+        "tasks": [
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "photo_url": null
+                },
+                "current_board": "done",
+                "description": "Example Description 1",
+                "label": "bug",
+                "task_name": "Example Done 1"
+            },
+            {
+                "assignee": {
+                    "email": "example@mail.com",
+                    "photo_url": null
+                },
+                "current_board": "done",
+                "description": "Example Description 1",
+                "label": "bug",
+                "task_name": "Example Done 2"
+            }
+        ]
+    }
+}
