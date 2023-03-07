@@ -9,10 +9,10 @@ class TaskCardFeedback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Card(
+    return Card(
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      color: Colors.red,
+      color: Colors.white70.withOpacity(0.9),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -24,6 +24,6 @@ class TaskCardFeedback extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 }

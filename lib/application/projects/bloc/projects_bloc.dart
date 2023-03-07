@@ -1,18 +1,24 @@
-import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kanban_board/domain/projects/entities/projects.dart';
+import 'package:kanban_board/domain/projects/failure/failure.dart';
 import 'package:kanban_board/domain/projects/param/projects_param.dart';
-import 'package:kanban_board/domain/projects/projects_repo.dart';
-import 'package:kanban_board/infrastructure/local/secure_storage.dart';
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart';
+import 'package:kanban_board/infrastructure/remote/projects_repo.dart';
 
 part 'projects_bloc.freezed.dart';
 part 'projects_event.dart';
 part 'projects_state.dart';
+
+/// [Naming Convention]
+
+/// [req] keyword stands for [Request]
+/// [res] keyword stands for [Response]
+
+/// [Enum] to identify which [Response] type to be return
 
 @injectable
 class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
@@ -29,6 +35,8 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
     on<ReqCreateProject>(_onReqCreateProject);
 
     on<ReqGetAllProjects>(_onReqGetAllProjects);
+
+    on<ReqDeleteProject>(_onReqDeleteProject);
   }
 
   void _onReqDetailProject(ReqDetailProject event, Emitter<ProjectsState> emit) async {
@@ -38,7 +46,6 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
       either.fold(
         (l) => state.copyWith(enumProjectState: EnumProjectState.failure),
         (r) {
-          // log('success ${r.toJson()}');
           secureStorageRepository.setCurrentOpenedProject(event.id);
           return state.copyWith(
             projectEntities: r,
@@ -69,7 +76,6 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
   }
 
   void _onReqCreateProject(ReqCreateProject event, Emitter<ProjectsState> emit) async {
-    // Option<String> userEmail = optionOf();
     final projectOwnerEmail = await secureStorageRepository.getUserEmail();
     final either = await projectsRepository.create(
       ProjecParam(
@@ -81,14 +87,8 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
 
     emit(
       either.fold(
-        (l) {
-          log('failed fired');
-          return state.copyWith(enumProjectState: EnumProjectState.failure);
-        },
-        (r) {
-          log('success fired $r');
-          return state.copyWith(enumProjectState: EnumProjectState.success, projectsId: r);
-        },
+        (l) => state.copyWith(enumProjectState: EnumProjectState.failure),
+        (r) => state.copyWith(enumProjectState: EnumProjectState.success, projectsId: r),
       ),
     );
   }
@@ -101,11 +101,30 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
 
       emit(
         res.fold(
-          (l) => state.copyWith(enumProjectState: EnumProjectState.failure),
+          (l) => state.copyWith( enumProjectState: EnumProjectState.emptyProjects),
           (r) => state.copyWith(
             list: r,
             enumProjectState: EnumProjectState.allProjects,
           ),
+        ),
+      );
+    } else {
+      emit(state.copyWith(enumProjectState: EnumProjectState.failure));
+    }
+  }
+
+  void _onReqDeleteProject(ReqDeleteProject event, Emitter<ProjectsState> emit) async {
+    String? currentProjectId = await secureStorageRepository.getCurrentOpenedProject();
+
+    if (currentProjectId != null) {
+      final res = await projectsRepository.delete(currentProjectId);
+
+      emit(
+        res.fold(
+          (l) => state.copyWith(enumProjectState: EnumProjectState.failure),
+          (r) => state.copyWith(
+            enumProjectState: EnumProjectState.resDeleteProject
+          )
         ),
       );
     } else {

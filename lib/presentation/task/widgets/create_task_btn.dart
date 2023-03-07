@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,12 +21,6 @@ class CreateTaskButton extends StatelessWidget {
         }
 
         if (state.enumTaskState == EnumTaskState.resCreateTask) {
-        // log('CreateTaskButton ${state.enumTaskState}');
-          // showDialog(
-          //   context: context,
-          //   builder: (context) => InfoDialog(content: 'Task Created'),
-          // );
-          // Future.delayed(const Duration(seconds: 1), () => context.router.pop());
           context.router.pop();
         }
       },

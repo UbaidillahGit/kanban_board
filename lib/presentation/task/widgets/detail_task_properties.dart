@@ -32,7 +32,6 @@ class TaskProperties extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TaskBloc>(
-      // create: (context) => getIt<TaskBloc>()..add(const ReqListCollaborator()),
       create: (context) => context.read<TaskBloc>()..add(const ReqListCollaborator()),
       child: BlocConsumer<TaskBloc, TaskState>(
         listener: (context, state) {},
@@ -48,7 +47,6 @@ class TaskProperties extends StatelessWidget {
               ExpansionTile( ///__________ [Label]
                 iconColor: GlobalConstants.mainThemeColor,
                 backgroundColor: Colors.grey[200],
-                // trailing: state.,
                 shape: labelShape,
                 collapsedShape: labelShape,
                 expandedCrossAxisAlignment: CrossAxisAlignment.center,
@@ -65,12 +63,10 @@ class TaskProperties extends StatelessWidget {
                 childrenPadding: const EdgeInsets.all(8.0),
                 collapsedTextColor: Colors.red,
                 expandedAlignment: Alignment.topLeft,
-                // children: listLabel.map((e) => LabelWidgets(labelId: e)).toList(),
                 children: <Widget>[
                   SizedBox(
                     width: double.maxFinite,
                     height: 40,
-                    // child: GlobalWidgets().text(txt: 'Label', fontWeight: FontWeight.w500),
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: listLabel

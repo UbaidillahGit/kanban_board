@@ -11,9 +11,11 @@ import 'package:firebase_auth_platform_interface/firebase_auth_platform_interfac
 import 'package:firebase_core/firebase_core.dart' as _i2;
 import 'package:fpdart/fpdart.dart' as _i5;
 import 'package:google_sign_in/google_sign_in.dart' as _i6;
-import 'package:kanban_board/domain/user/failure.dart' as _i9;
-import 'package:kanban_board/domain/user/user_repo.dart' as _i8;
-import 'package:kanban_board/infrastructure/local/secure_storage.dart' as _i10;
+import 'package:kanban_board/domain/user/failure.dart' as _i10;
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart'
+    as _i11;
+import 'package:kanban_board/infrastructure/remote/auth_repo.dart' as _i8;
+import 'package:kanban_board/infrastructure/remote/user_repo.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -624,30 +626,14 @@ class MockFirebaseAuth extends _i1.Mock implements _i4.FirebaseAuth {
       ) as _i7.Future<void>);
 }
 
-/// A class which mocks [UserRepository].
+/// A class which mocks [AuthRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockUserRepository extends _i1.Mock implements _i8.UserRepository {
-  MockUserRepository() {
+class MockAuthRepository extends _i1.Mock implements _i8.AuthRepository {
+  MockAuthRepository() {
     _i1.throwOnMissingStub(this);
   }
 
-  @override
-  _i7.Future<_i5.Either<_i9.UsersFailure, _i5.Unit>> create(_i4.User? user) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #create,
-          [user],
-        ),
-        returnValue: _i7.Future<_i5.Either<_i9.UsersFailure, _i5.Unit>>.value(
-            _FakeEither_4<_i9.UsersFailure, _i5.Unit>(
-          this,
-          Invocation.method(
-            #create,
-            [user],
-          ),
-        )),
-      ) as _i7.Future<_i5.Either<_i9.UsersFailure, _i5.Unit>>);
   @override
   _i7.Future<_i6.GoogleSignInAccount?> goggleSignIn() => (super.noSuchMethod(
         Invocation.method(
@@ -656,13 +642,48 @@ class MockUserRepository extends _i1.Mock implements _i8.UserRepository {
         ),
         returnValue: _i7.Future<_i6.GoogleSignInAccount?>.value(),
       ) as _i7.Future<_i6.GoogleSignInAccount?>);
+  @override
+  _i7.Future<void> signOut() => (super.noSuchMethod(
+        Invocation.method(
+          #signOut,
+          [],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
+}
+
+/// A class which mocks [UserRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUserRepository extends _i1.Mock implements _i9.UserRepository {
+  MockUserRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i7.Future<_i5.Either<_i10.UsersFailure, _i5.Unit>> create(_i4.User? user) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #create,
+          [user],
+        ),
+        returnValue: _i7.Future<_i5.Either<_i10.UsersFailure, _i5.Unit>>.value(
+            _FakeEither_4<_i10.UsersFailure, _i5.Unit>(
+          this,
+          Invocation.method(
+            #create,
+            [user],
+          ),
+        )),
+      ) as _i7.Future<_i5.Either<_i10.UsersFailure, _i5.Unit>>);
 }
 
 /// A class which mocks [SecureStorageRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSecureStorageRepository extends _i1.Mock
-    implements _i10.SecureStorageRepository {
+    implements _i11.SecureStorageRepository {
   MockSecureStorageRepository() {
     _i1.throwOnMissingStub(this);
   }
@@ -699,6 +720,15 @@ class MockSecureStorageRepository extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  _i7.Future<void> setClearAll() => (super.noSuchMethod(
+        Invocation.method(
+          #setClearAll,
+          [],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
   @override
   _i7.Future<String?> getUserDisplayName() => (super.noSuchMethod(
         Invocation.method(

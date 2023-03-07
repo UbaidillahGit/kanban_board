@@ -4,8 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:kanban_board/application/projects/bloc/projects_bloc.dart';
 import 'package:kanban_board/domain/projects/entities/projects.dart';
-import 'package:kanban_board/domain/projects/projects_repo.dart';
-import 'package:kanban_board/infrastructure/local/secure_storage.dart';
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart';
+import 'package:kanban_board/infrastructure/remote/projects_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
@@ -43,7 +43,7 @@ void main() {
   blocTest(
     'ReqDetailProject',
     build: () => projectsBloc,
-    act: (bloc) => bloc.add(ReqDetailProject(mocksAnyString)),
+    act: (bloc) => bloc.add(const ReqDetailProject(mocksAnyString)),
     setUp: () {
       when(mockProjectsRepository.detail(mocksAnyString)).thenAnswer((realInvocation) async => Either.right(projectEntities));
     },

@@ -20,18 +20,21 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() reqUserInfo,
+    required TResult Function() reqSignOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? reqUserInfo,
+    TResult? Function()? reqSignOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? reqUserInfo,
+    TResult Function()? reqSignOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(ReqUserInfo value) reqUserInfo,
+    required TResult Function(ReqSignOut value) reqSignOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(ReqUserInfo value)? reqUserInfo,
+    TResult? Function(ReqSignOut value)? reqSignOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ReqUserInfo value)? reqUserInfo,
+    TResult Function(ReqSignOut value)? reqSignOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +118,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() reqUserInfo,
+    required TResult Function() reqSignOut,
   }) {
     return started();
   }
@@ -121,6 +128,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? reqUserInfo,
+    TResult? Function()? reqSignOut,
   }) {
     return started?.call();
   }
@@ -130,6 +138,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? reqUserInfo,
+    TResult Function()? reqSignOut,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -143,6 +152,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(ReqUserInfo value) reqUserInfo,
+    required TResult Function(ReqSignOut value) reqSignOut,
   }) {
     return started(this);
   }
@@ -152,6 +162,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(ReqUserInfo value)? reqUserInfo,
+    TResult? Function(ReqSignOut value)? reqSignOut,
   }) {
     return started?.call(this);
   }
@@ -161,6 +172,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ReqUserInfo value)? reqUserInfo,
+    TResult Function(ReqSignOut value)? reqSignOut,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -214,6 +226,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() reqUserInfo,
+    required TResult Function() reqSignOut,
   }) {
     return reqUserInfo();
   }
@@ -223,6 +236,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? reqUserInfo,
+    TResult? Function()? reqSignOut,
   }) {
     return reqUserInfo?.call();
   }
@@ -232,6 +246,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? reqUserInfo,
+    TResult Function()? reqSignOut,
     required TResult orElse(),
   }) {
     if (reqUserInfo != null) {
@@ -245,6 +260,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(ReqUserInfo value) reqUserInfo,
+    required TResult Function(ReqSignOut value) reqSignOut,
   }) {
     return reqUserInfo(this);
   }
@@ -254,6 +270,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(ReqUserInfo value)? reqUserInfo,
+    TResult? Function(ReqSignOut value)? reqSignOut,
   }) {
     return reqUserInfo?.call(this);
   }
@@ -263,6 +280,7 @@ class _$ReqUserInfo implements ReqUserInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ReqUserInfo value)? reqUserInfo,
+    TResult Function(ReqSignOut value)? reqSignOut,
     required TResult orElse(),
   }) {
     if (reqUserInfo != null) {
@@ -277,7 +295,116 @@ abstract class ReqUserInfo implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$ReqSignOutCopyWith<$Res> {
+  factory _$$ReqSignOutCopyWith(
+          _$ReqSignOut value, $Res Function(_$ReqSignOut) then) =
+      __$$ReqSignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReqSignOutCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ReqSignOut>
+    implements _$$ReqSignOutCopyWith<$Res> {
+  __$$ReqSignOutCopyWithImpl(
+      _$ReqSignOut _value, $Res Function(_$ReqSignOut) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReqSignOut implements ReqSignOut {
+  const _$ReqSignOut();
+
+  @override
+  String toString() {
+    return 'HomeEvent.reqSignOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReqSignOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() reqUserInfo,
+    required TResult Function() reqSignOut,
+  }) {
+    return reqSignOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? reqUserInfo,
+    TResult? Function()? reqSignOut,
+  }) {
+    return reqSignOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? reqUserInfo,
+    TResult Function()? reqSignOut,
+    required TResult orElse(),
+  }) {
+    if (reqSignOut != null) {
+      return reqSignOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ReqUserInfo value) reqUserInfo,
+    required TResult Function(ReqSignOut value) reqSignOut,
+  }) {
+    return reqSignOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ReqUserInfo value)? reqUserInfo,
+    TResult? Function(ReqSignOut value)? reqSignOut,
+  }) {
+    return reqSignOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ReqUserInfo value)? reqUserInfo,
+    TResult Function(ReqSignOut value)? reqSignOut,
+    required TResult orElse(),
+  }) {
+    if (reqSignOut != null) {
+      return reqSignOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReqSignOut implements HomeEvent {
+  const factory ReqSignOut() = _$ReqSignOut;
+}
+
+/// @nodoc
 mixin _$HomeState {
+  EnumHomeState get enumHomeState => throw _privateConstructorUsedError;
   String get userDisplayName => throw _privateConstructorUsedError;
   String get userPhotoUrl => throw _privateConstructorUsedError;
 
@@ -291,7 +418,10 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({String userDisplayName, String userPhotoUrl});
+  $Res call(
+      {EnumHomeState enumHomeState,
+      String userDisplayName,
+      String userPhotoUrl});
 }
 
 /// @nodoc
@@ -307,10 +437,15 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? enumHomeState = null,
     Object? userDisplayName = null,
     Object? userPhotoUrl = null,
   }) {
     return _then(_value.copyWith(
+      enumHomeState: null == enumHomeState
+          ? _value.enumHomeState
+          : enumHomeState // ignore: cast_nullable_to_non_nullable
+              as EnumHomeState,
       userDisplayName: null == userDisplayName
           ? _value.userDisplayName
           : userDisplayName // ignore: cast_nullable_to_non_nullable
@@ -330,7 +465,10 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$$_HomeStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userDisplayName, String userPhotoUrl});
+  $Res call(
+      {EnumHomeState enumHomeState,
+      String userDisplayName,
+      String userPhotoUrl});
 }
 
 /// @nodoc
@@ -344,10 +482,15 @@ class __$$_HomeStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? enumHomeState = null,
     Object? userDisplayName = null,
     Object? userPhotoUrl = null,
   }) {
     return _then(_$_HomeState(
+      enumHomeState: null == enumHomeState
+          ? _value.enumHomeState
+          : enumHomeState // ignore: cast_nullable_to_non_nullable
+              as EnumHomeState,
       userDisplayName: null == userDisplayName
           ? _value.userDisplayName
           : userDisplayName // ignore: cast_nullable_to_non_nullable
@@ -364,8 +507,12 @@ class __$$_HomeStateCopyWithImpl<$Res>
 
 class _$_HomeState implements _HomeState {
   const _$_HomeState(
-      {required this.userDisplayName, required this.userPhotoUrl});
+      {required this.enumHomeState,
+      required this.userDisplayName,
+      required this.userPhotoUrl});
 
+  @override
+  final EnumHomeState enumHomeState;
   @override
   final String userDisplayName;
   @override
@@ -373,7 +520,7 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(userDisplayName: $userDisplayName, userPhotoUrl: $userPhotoUrl)';
+    return 'HomeState(enumHomeState: $enumHomeState, userDisplayName: $userDisplayName, userPhotoUrl: $userPhotoUrl)';
   }
 
   @override
@@ -381,6 +528,8 @@ class _$_HomeState implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomeState &&
+            (identical(other.enumHomeState, enumHomeState) ||
+                other.enumHomeState == enumHomeState) &&
             (identical(other.userDisplayName, userDisplayName) ||
                 other.userDisplayName == userDisplayName) &&
             (identical(other.userPhotoUrl, userPhotoUrl) ||
@@ -388,7 +537,8 @@ class _$_HomeState implements _HomeState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userDisplayName, userPhotoUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, enumHomeState, userDisplayName, userPhotoUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -399,9 +549,12 @@ class _$_HomeState implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required final String userDisplayName,
+      {required final EnumHomeState enumHomeState,
+      required final String userDisplayName,
       required final String userPhotoUrl}) = _$_HomeState;
 
+  @override
+  EnumHomeState get enumHomeState;
   @override
   String get userDisplayName;
   @override

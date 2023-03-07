@@ -20,37 +20,43 @@ mixin _$ProjectsFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() failToCreateProject,
+    required TResult Function() emptyProjecest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unexpected,
     TResult? Function()? failToCreateProject,
+    TResult? Function()? emptyProjecest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? failToCreateProject,
+    TResult Function()? emptyProjecest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_FailToCreateProject value) failToCreateProject,
+    required TResult Function(FailToCreateProject value) failToCreateProject,
+    required TResult Function(EmptyProjects value) emptyProjecest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Unexpected value)? unexpected,
-    TResult? Function(_FailToCreateProject value)? failToCreateProject,
+    TResult? Function(FailToCreateProject value)? failToCreateProject,
+    TResult? Function(EmptyProjects value)? emptyProjecest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_FailToCreateProject value)? failToCreateProject,
+    TResult Function(FailToCreateProject value)? failToCreateProject,
+    TResult Function(EmptyProjects value)? emptyProjecest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,7 +99,7 @@ class __$$_UnexpectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Unexpected implements _Unexpected {
-  _$_Unexpected();
+  const _$_Unexpected();
 
   @override
   String toString() {
@@ -114,6 +120,7 @@ class _$_Unexpected implements _Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() failToCreateProject,
+    required TResult Function() emptyProjecest,
   }) {
     return unexpected();
   }
@@ -123,6 +130,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unexpected,
     TResult? Function()? failToCreateProject,
+    TResult? Function()? emptyProjecest,
   }) {
     return unexpected?.call();
   }
@@ -132,6 +140,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? failToCreateProject,
+    TResult Function()? emptyProjecest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -144,7 +153,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_FailToCreateProject value) failToCreateProject,
+    required TResult Function(FailToCreateProject value) failToCreateProject,
+    required TResult Function(EmptyProjects value) emptyProjecest,
   }) {
     return unexpected(this);
   }
@@ -153,7 +163,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Unexpected value)? unexpected,
-    TResult? Function(_FailToCreateProject value)? failToCreateProject,
+    TResult? Function(FailToCreateProject value)? failToCreateProject,
+    TResult? Function(EmptyProjects value)? emptyProjecest,
   }) {
     return unexpected?.call(this);
   }
@@ -162,7 +173,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_FailToCreateProject value)? failToCreateProject,
+    TResult Function(FailToCreateProject value)? failToCreateProject,
+    TResult Function(EmptyProjects value)? emptyProjecest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -173,29 +185,29 @@ class _$_Unexpected implements _Unexpected {
 }
 
 abstract class _Unexpected implements ProjectsFailure {
-  factory _Unexpected() = _$_Unexpected;
+  const factory _Unexpected() = _$_Unexpected;
 }
 
 /// @nodoc
-abstract class _$$_FailToCreateProjectCopyWith<$Res> {
-  factory _$$_FailToCreateProjectCopyWith(_$_FailToCreateProject value,
-          $Res Function(_$_FailToCreateProject) then) =
-      __$$_FailToCreateProjectCopyWithImpl<$Res>;
+abstract class _$$FailToCreateProjectCopyWith<$Res> {
+  factory _$$FailToCreateProjectCopyWith(_$FailToCreateProject value,
+          $Res Function(_$FailToCreateProject) then) =
+      __$$FailToCreateProjectCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FailToCreateProjectCopyWithImpl<$Res>
-    extends _$ProjectsFailureCopyWithImpl<$Res, _$_FailToCreateProject>
-    implements _$$_FailToCreateProjectCopyWith<$Res> {
-  __$$_FailToCreateProjectCopyWithImpl(_$_FailToCreateProject _value,
-      $Res Function(_$_FailToCreateProject) _then)
+class __$$FailToCreateProjectCopyWithImpl<$Res>
+    extends _$ProjectsFailureCopyWithImpl<$Res, _$FailToCreateProject>
+    implements _$$FailToCreateProjectCopyWith<$Res> {
+  __$$FailToCreateProjectCopyWithImpl(
+      _$FailToCreateProject _value, $Res Function(_$FailToCreateProject) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_FailToCreateProject implements _FailToCreateProject {
-  _$_FailToCreateProject();
+class _$FailToCreateProject implements FailToCreateProject {
+  const _$FailToCreateProject();
 
   @override
   String toString() {
@@ -205,7 +217,7 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_FailToCreateProject);
+        (other.runtimeType == runtimeType && other is _$FailToCreateProject);
   }
 
   @override
@@ -216,6 +228,7 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() failToCreateProject,
+    required TResult Function() emptyProjecest,
   }) {
     return failToCreateProject();
   }
@@ -225,6 +238,7 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unexpected,
     TResult? Function()? failToCreateProject,
+    TResult? Function()? emptyProjecest,
   }) {
     return failToCreateProject?.call();
   }
@@ -234,6 +248,7 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? failToCreateProject,
+    TResult Function()? emptyProjecest,
     required TResult orElse(),
   }) {
     if (failToCreateProject != null) {
@@ -246,7 +261,8 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_FailToCreateProject value) failToCreateProject,
+    required TResult Function(FailToCreateProject value) failToCreateProject,
+    required TResult Function(EmptyProjects value) emptyProjecest,
   }) {
     return failToCreateProject(this);
   }
@@ -255,7 +271,8 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Unexpected value)? unexpected,
-    TResult? Function(_FailToCreateProject value)? failToCreateProject,
+    TResult? Function(FailToCreateProject value)? failToCreateProject,
+    TResult? Function(EmptyProjects value)? emptyProjecest,
   }) {
     return failToCreateProject?.call(this);
   }
@@ -264,7 +281,8 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_FailToCreateProject value)? failToCreateProject,
+    TResult Function(FailToCreateProject value)? failToCreateProject,
+    TResult Function(EmptyProjects value)? emptyProjecest,
     required TResult orElse(),
   }) {
     if (failToCreateProject != null) {
@@ -274,6 +292,114 @@ class _$_FailToCreateProject implements _FailToCreateProject {
   }
 }
 
-abstract class _FailToCreateProject implements ProjectsFailure {
-  factory _FailToCreateProject() = _$_FailToCreateProject;
+abstract class FailToCreateProject implements ProjectsFailure {
+  const factory FailToCreateProject() = _$FailToCreateProject;
+}
+
+/// @nodoc
+abstract class _$$EmptyProjectsCopyWith<$Res> {
+  factory _$$EmptyProjectsCopyWith(
+          _$EmptyProjects value, $Res Function(_$EmptyProjects) then) =
+      __$$EmptyProjectsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmptyProjectsCopyWithImpl<$Res>
+    extends _$ProjectsFailureCopyWithImpl<$Res, _$EmptyProjects>
+    implements _$$EmptyProjectsCopyWith<$Res> {
+  __$$EmptyProjectsCopyWithImpl(
+      _$EmptyProjects _value, $Res Function(_$EmptyProjects) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmptyProjects implements EmptyProjects {
+  _$EmptyProjects();
+
+  @override
+  String toString() {
+    return 'ProjectsFailure.emptyProjecest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyProjects);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() failToCreateProject,
+    required TResult Function() emptyProjecest,
+  }) {
+    return emptyProjecest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unexpected,
+    TResult? Function()? failToCreateProject,
+    TResult? Function()? emptyProjecest,
+  }) {
+    return emptyProjecest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? failToCreateProject,
+    TResult Function()? emptyProjecest,
+    required TResult orElse(),
+  }) {
+    if (emptyProjecest != null) {
+      return emptyProjecest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(FailToCreateProject value) failToCreateProject,
+    required TResult Function(EmptyProjects value) emptyProjecest,
+  }) {
+    return emptyProjecest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(FailToCreateProject value)? failToCreateProject,
+    TResult? Function(EmptyProjects value)? emptyProjecest,
+  }) {
+    return emptyProjecest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(FailToCreateProject value)? failToCreateProject,
+    TResult Function(EmptyProjects value)? emptyProjecest,
+    required TResult orElse(),
+  }) {
+    if (emptyProjecest != null) {
+      return emptyProjecest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyProjects implements ProjectsFailure {
+  factory EmptyProjects() = _$EmptyProjects;
 }

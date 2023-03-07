@@ -7,10 +7,10 @@ import 'dart:async' as _i4;
 
 import 'package:firebase_auth/firebase_auth.dart' as _i7;
 import 'package:fpdart/fpdart.dart' as _i2;
-import 'package:google_sign_in/google_sign_in.dart' as _i8;
 import 'package:kanban_board/domain/user/failure.dart' as _i6;
-import 'package:kanban_board/domain/user/user_repo.dart' as _i5;
-import 'package:kanban_board/infrastructure/local/secure_storage.dart' as _i3;
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart'
+    as _i3;
+import 'package:kanban_board/infrastructure/remote/user_repo.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -71,6 +71,15 @@ class MockSecureStorageRepository extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  _i4.Future<void> setClearAll() => (super.noSuchMethod(
+        Invocation.method(
+          #setClearAll,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<String?> getUserDisplayName() => (super.noSuchMethod(
         Invocation.method(
@@ -138,13 +147,4 @@ class MockUserRepository extends _i1.Mock implements _i5.UserRepository {
           ),
         )),
       ) as _i4.Future<_i2.Either<_i6.UsersFailure, _i2.Unit>>);
-  @override
-  _i4.Future<_i8.GoogleSignInAccount?> goggleSignIn() => (super.noSuchMethod(
-        Invocation.method(
-          #goggleSignIn,
-          [],
-        ),
-        returnValue: _i4.Future<_i8.GoogleSignInAccount?>.value(),
-        returnValueForMissingStub: _i4.Future<_i8.GoogleSignInAccount?>.value(),
-      ) as _i4.Future<_i8.GoogleSignInAccount?>);
 }

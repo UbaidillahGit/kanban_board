@@ -4,14 +4,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kanban_board/application/login_social/bloc/login_bloc.dart';
-import 'package:kanban_board/domain/user/user_repo.dart';
-import 'package:kanban_board/infrastructure/local/secure_storage.dart';
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart';
+import 'package:kanban_board/infrastructure/remote/auth_repo.dart';
+import 'package:kanban_board/infrastructure/remote/user_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+
 import 'login_social_test.mocks.dart';
 
 @GenerateNiceMocks([
   MockSpec<FirebaseAuth>(as: #MockFirebaseAuth, onMissingStub: OnMissingStub.throwException),
+
+  MockSpec<AuthRepository>(as: #MockAuthRepository, onMissingStub: OnMissingStub.throwException),
 
   MockSpec<UserRepository>(as: #MockUserRepository, onMissingStub: OnMissingStub.throwException),
 
@@ -32,6 +36,7 @@ import 'login_social_test.mocks.dart';
 
 void main() {
   late LoginBloc loginBloc;
+  late MockAuthRepository mockAuthRepository;
   late MockFirebaseAuth mockFirebaseAuth;
   late MockUserRepository mockUserRepository;
   late MockSecureStorageRepository mockSecureStorageRepository;
@@ -43,12 +48,14 @@ void main() {
   
   setUp(() {
     mockFirebaseAuth = MockFirebaseAuth();
+    mockAuthRepository = MockAuthRepository();
     mockUserRepository = MockUserRepository();
     mockSecureStorageRepository = MockSecureStorageRepository();
     loginBloc = LoginBloc(
       mockFirebaseAuth,
-      mockUserRepository,
+      mockAuthRepository,
       mockSecureStorageRepository,
+      mockUserRepository,
     );
     mockGoogleSignInAccount = MockGoogleSignInAccount();
     mockGoogleSignInAuthentication = MockGoogleSignInAuthentication();
@@ -65,7 +72,7 @@ void main() {
      
       const String mocksAnyString = 'mocks_any_string';
 
-      when(mockUserRepository.goggleSignIn()).thenAnswer((_) async => mockGoogleSignInAccount);
+      when(mockAuthRepository.goggleSignIn()).thenAnswer((_) async => mockGoogleSignInAccount);
 
       when(mockGoogleSignInAccount.authentication).thenAnswer((_) async => mockGoogleSignInAuthentication);
 

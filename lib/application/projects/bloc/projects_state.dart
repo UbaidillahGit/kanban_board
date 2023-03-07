@@ -1,6 +1,16 @@
 part of 'projects_bloc.dart';
 
-enum EnumProjectState {idle, loading, success, failure, allProjects, resDetailProject, resStreamDetailProject}
+enum EnumProjectState {
+  idle,
+  loading,
+  success,
+  failure,
+  allProjects,
+  emptyProjects,
+  resDetailProject,
+  resStreamDetailProject,
+  resDeleteProject
+}
 
 @freezed
 class ProjectsState extends Equatable with _$ProjectsState {
@@ -13,6 +23,7 @@ class ProjectsState extends Equatable with _$ProjectsState {
     required ProjectEntities projectEntities,
     required EnumProjectState enumProjectState,
     required String projectsId,
+    required ProjectsFailure? projectsFailure
   }) = _ProjectsState;
 
   factory ProjectsState.initial() => ProjectsState(
@@ -20,8 +31,8 @@ class ProjectsState extends Equatable with _$ProjectsState {
       projectsNameController: TextEditingController(text: ''),
       list: const [],
       projectEntities: ProjectEntities(),
-      enumProjectState: EnumProjectState.idle,
-      projectsId: '');
+      enumProjectState: EnumProjectState.loading,
+      projectsId: '', projectsFailure: null);
 
   @override
   List<Object?> get props => [
@@ -31,8 +42,8 @@ class ProjectsState extends Equatable with _$ProjectsState {
         projectEntities,
         enumProjectState,
         projectsId,
+        projectsFailure
         // identityHashCode(this),
       ];
 
-  // factory ProjectsState.resCreateProject() = ResCreateProject;
 }

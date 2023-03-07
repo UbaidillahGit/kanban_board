@@ -10,10 +10,7 @@ class CreateTaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      // onTap: () {
-      //   context.router.push(DetailTaskRoute());
-      // },
+    return InkWell( 
       onTap: callback,
       child: Card(
         elevation: 0,

@@ -25,12 +25,7 @@ class AppWidget extends StatelessWidget {
       routerDelegate: appRouter.delegate(),
       routeInformationParser: appRouter.defaultRouteParser(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          // colorScheme: const ColorScheme.light(
-          //   background: Colors.grey
-          // ),
-          // canvasColor: GlobalConstants.canvasColor
-          ),
+      theme: ThemeData(),
     );
   }
 }

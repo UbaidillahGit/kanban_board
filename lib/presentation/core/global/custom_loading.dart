@@ -10,11 +10,3 @@ class CustomLoading {
     );
   }
 }
-
-// class CustomLoading extends CircularProgressIndicator {
-//   const CustomLoading({super.key,Color color = GlobalConstants.mainThemeColor }) : super(
-//     color: color,
-
-//   );
-  
-// }

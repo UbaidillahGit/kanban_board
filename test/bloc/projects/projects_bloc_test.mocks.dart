@@ -9,8 +9,9 @@ import 'package:fpdart/fpdart.dart' as _i2;
 import 'package:kanban_board/domain/projects/entities/projects.dart' as _i6;
 import 'package:kanban_board/domain/projects/failure/failure.dart' as _i5;
 import 'package:kanban_board/domain/projects/param/projects_param.dart' as _i7;
-import 'package:kanban_board/domain/projects/projects_repo.dart' as _i3;
-import 'package:kanban_board/infrastructure/local/secure_storage.dart' as _i8;
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart'
+    as _i8;
+import 'package:kanban_board/infrastructure/remote/projects_repo.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -127,6 +128,23 @@ class MockProjectsRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.ProjectsFailure, String>>);
+  @override
+  _i4.Future<_i2.Either<_i5.ProjectsFailure, _i2.Unit>> delete(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #delete,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.ProjectsFailure, _i2.Unit>>.value(
+                _FakeEither_0<_i5.ProjectsFailure, _i2.Unit>(
+          this,
+          Invocation.method(
+            #delete,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.ProjectsFailure, _i2.Unit>>);
 }
 
 /// A class which mocks [SecureStorageRepository].
@@ -170,6 +188,15 @@ class MockSecureStorageRepository extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  _i4.Future<void> setClearAll() => (super.noSuchMethod(
+        Invocation.method(
+          #setClearAll,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<String?> getUserDisplayName() => (super.noSuchMethod(
         Invocation.method(

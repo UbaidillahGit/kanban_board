@@ -5,7 +5,7 @@ part 'failure.freezed.dart';
 
 @freezed
 abstract class ProjectsFailure with _$ProjectsFailure {
-  factory ProjectsFailure.unexpected() = _Unexpected;
-  
-  factory ProjectsFailure.failToCreateProject() = _FailToCreateProject;
+  const factory ProjectsFailure.unexpected() = _Unexpected;
+  const factory ProjectsFailure.failToCreateProject() = FailToCreateProject;
+  factory ProjectsFailure.emptyProjecest() = EmptyProjects; 
 }

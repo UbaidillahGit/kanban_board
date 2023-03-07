@@ -3,18 +3,18 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:csv/csv.dart';
+import 'package:equatable/equatable.dart';
 import 'package:external_path/external_path.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:kanban_board/domain/board/board_repo.dart';
 import 'package:kanban_board/domain/projects/entities/projects.dart';
-import 'package:equatable/equatable.dart';
+import 'package:kanban_board/infrastructure/remote/board_repo.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+part 'board_bloc.freezed.dart';
 part 'board_event.dart';
 part 'board_state.dart';
-part 'board_bloc.freezed.dart';
 
 /// [Naming Convention]
 
@@ -62,8 +62,6 @@ class BoardBloc extends Bloc<BoardEvent, BoardState> {
   }
 
   void _onReqTaskMove(ReqTaskMove event, Emitter<BoardState> emit) async {
-    log('_onReqTaskMove ${event.taskEntities}');
-
     _boardRepository.taskMove(
       event.taskEntities.currentBoard ?? '',
       event.boardDestination,
@@ -113,21 +111,11 @@ class BoardBloc extends Bloc<BoardEvent, BoardState> {
     String csv = const ListToCsvConverter().convert(rows);
 
     String dir = await ExternalPath.getExternalStoragePublicDirectory(ExternalPath.DIRECTORY_DOWNLOADS);
-    print("dir $dir");
-    String file = "$dir";
+    // print("dir $dir");
+    String file = dir;
 
-    File f = File(file + "/filename.csv");
+    File f = File("$file/filename.csv");
 
     f.writeAsString(csv);
-    log('csv $csv | ${f.path}');
-    // final currentProjectData = state.projectEntities;
-
-    // emit(
-    //   state.copyWith(
-    //     enumBoardState: EnumBoardState.resTaskMove,
-    //     boardToDo: state.boardToDo,
-    //     boardInProgress: state.boardInProgress,
-    //   ),
-    // );
   }
 }

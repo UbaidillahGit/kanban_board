@@ -21,7 +21,8 @@ mixin _$ProjectsEvent {
     required TResult Function() getAll,
     required TResult Function() reqCreateProject,
     required TResult Function(String id) reqStreamDetailProject,
-    required TResult Function(String id) detail,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,8 @@ mixin _$ProjectsEvent {
     TResult? Function()? getAll,
     TResult? Function()? reqCreateProject,
     TResult? Function(String id)? reqStreamDetailProject,
-    TResult? Function(String id)? detail,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +39,8 @@ mixin _$ProjectsEvent {
     TResult Function()? getAll,
     TResult Function()? reqCreateProject,
     TResult Function(String id)? reqStreamDetailProject,
-    TResult Function(String id)? detail,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,7 +50,8 @@ mixin _$ProjectsEvent {
     required TResult Function(ReqCreateProject value) reqCreateProject,
     required TResult Function(ReqStreamDetailProject value)
         reqStreamDetailProject,
-    required TResult Function(ReqDetailProject value) detail,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +59,8 @@ mixin _$ProjectsEvent {
     TResult? Function(ReqGetAllProjects value)? getAll,
     TResult? Function(ReqCreateProject value)? reqCreateProject,
     TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult? Function(ReqDetailProject value)? detail,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +68,8 @@ mixin _$ProjectsEvent {
     TResult Function(ReqGetAllProjects value)? getAll,
     TResult Function(ReqCreateProject value)? reqCreateProject,
     TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult Function(ReqDetailProject value)? detail,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,7 +134,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     required TResult Function() getAll,
     required TResult Function() reqCreateProject,
     required TResult Function(String id) reqStreamDetailProject,
-    required TResult Function(String id) detail,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
   }) {
     return getAll();
   }
@@ -139,7 +146,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     TResult? Function()? getAll,
     TResult? Function()? reqCreateProject,
     TResult? Function(String id)? reqStreamDetailProject,
-    TResult? Function(String id)? detail,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
   }) {
     return getAll?.call();
   }
@@ -150,7 +158,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     TResult Function()? getAll,
     TResult Function()? reqCreateProject,
     TResult Function(String id)? reqStreamDetailProject,
-    TResult Function(String id)? detail,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
     required TResult orElse(),
   }) {
     if (getAll != null) {
@@ -166,7 +175,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     required TResult Function(ReqCreateProject value) reqCreateProject,
     required TResult Function(ReqStreamDetailProject value)
         reqStreamDetailProject,
-    required TResult Function(ReqDetailProject value) detail,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
   }) {
     return getAll(this);
   }
@@ -177,7 +187,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     TResult? Function(ReqGetAllProjects value)? getAll,
     TResult? Function(ReqCreateProject value)? reqCreateProject,
     TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult? Function(ReqDetailProject value)? detail,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
   }) {
     return getAll?.call(this);
   }
@@ -188,7 +199,8 @@ class _$ReqGetAllProjects implements ReqGetAllProjects {
     TResult Function(ReqGetAllProjects value)? getAll,
     TResult Function(ReqCreateProject value)? reqCreateProject,
     TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult Function(ReqDetailProject value)? detail,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
     required TResult orElse(),
   }) {
     if (getAll != null) {
@@ -243,7 +255,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     required TResult Function() getAll,
     required TResult Function() reqCreateProject,
     required TResult Function(String id) reqStreamDetailProject,
-    required TResult Function(String id) detail,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
   }) {
     return reqCreateProject();
   }
@@ -254,7 +267,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     TResult? Function()? getAll,
     TResult? Function()? reqCreateProject,
     TResult? Function(String id)? reqStreamDetailProject,
-    TResult? Function(String id)? detail,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
   }) {
     return reqCreateProject?.call();
   }
@@ -265,7 +279,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     TResult Function()? getAll,
     TResult Function()? reqCreateProject,
     TResult Function(String id)? reqStreamDetailProject,
-    TResult Function(String id)? detail,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
     required TResult orElse(),
   }) {
     if (reqCreateProject != null) {
@@ -281,7 +296,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     required TResult Function(ReqCreateProject value) reqCreateProject,
     required TResult Function(ReqStreamDetailProject value)
         reqStreamDetailProject,
-    required TResult Function(ReqDetailProject value) detail,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
   }) {
     return reqCreateProject(this);
   }
@@ -292,7 +308,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     TResult? Function(ReqGetAllProjects value)? getAll,
     TResult? Function(ReqCreateProject value)? reqCreateProject,
     TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult? Function(ReqDetailProject value)? detail,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
   }) {
     return reqCreateProject?.call(this);
   }
@@ -303,7 +320,8 @@ class _$ReqCreateProject implements ReqCreateProject {
     TResult Function(ReqGetAllProjects value)? getAll,
     TResult Function(ReqCreateProject value)? reqCreateProject,
     TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult Function(ReqDetailProject value)? detail,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
     required TResult orElse(),
   }) {
     if (reqCreateProject != null) {
@@ -351,7 +369,7 @@ class __$$ReqStreamDetailProjectCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ReqStreamDetailProject implements ReqStreamDetailProject {
-  _$ReqStreamDetailProject(this.id);
+  const _$ReqStreamDetailProject(this.id);
 
   @override
   final String id;
@@ -385,7 +403,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     required TResult Function() getAll,
     required TResult Function() reqCreateProject,
     required TResult Function(String id) reqStreamDetailProject,
-    required TResult Function(String id) detail,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
   }) {
     return reqStreamDetailProject(id);
   }
@@ -396,7 +415,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     TResult? Function()? getAll,
     TResult? Function()? reqCreateProject,
     TResult? Function(String id)? reqStreamDetailProject,
-    TResult? Function(String id)? detail,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
   }) {
     return reqStreamDetailProject?.call(id);
   }
@@ -407,7 +427,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     TResult Function()? getAll,
     TResult Function()? reqCreateProject,
     TResult Function(String id)? reqStreamDetailProject,
-    TResult Function(String id)? detail,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
     required TResult orElse(),
   }) {
     if (reqStreamDetailProject != null) {
@@ -423,7 +444,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     required TResult Function(ReqCreateProject value) reqCreateProject,
     required TResult Function(ReqStreamDetailProject value)
         reqStreamDetailProject,
-    required TResult Function(ReqDetailProject value) detail,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
   }) {
     return reqStreamDetailProject(this);
   }
@@ -434,7 +456,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     TResult? Function(ReqGetAllProjects value)? getAll,
     TResult? Function(ReqCreateProject value)? reqCreateProject,
     TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult? Function(ReqDetailProject value)? detail,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
   }) {
     return reqStreamDetailProject?.call(this);
   }
@@ -445,7 +468,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
     TResult Function(ReqGetAllProjects value)? getAll,
     TResult Function(ReqCreateProject value)? reqCreateProject,
     TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult Function(ReqDetailProject value)? detail,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
     required TResult orElse(),
   }) {
     if (reqStreamDetailProject != null) {
@@ -456,7 +480,8 @@ class _$ReqStreamDetailProject implements ReqStreamDetailProject {
 }
 
 abstract class ReqStreamDetailProject implements ProjectsEvent {
-  factory ReqStreamDetailProject(final String id) = _$ReqStreamDetailProject;
+  const factory ReqStreamDetailProject(final String id) =
+      _$ReqStreamDetailProject;
 
   String get id;
   @JsonKey(ignore: true)
@@ -498,14 +523,14 @@ class __$$ReqDetailProjectCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ReqDetailProject implements ReqDetailProject {
-  _$ReqDetailProject(this.id);
+  const _$ReqDetailProject(this.id);
 
   @override
   final String id;
 
   @override
   String toString() {
-    return 'ProjectsEvent.detail(id: $id)';
+    return 'ProjectsEvent.reqDetail(id: $id)';
   }
 
   @override
@@ -531,9 +556,10 @@ class _$ReqDetailProject implements ReqDetailProject {
     required TResult Function() getAll,
     required TResult Function() reqCreateProject,
     required TResult Function(String id) reqStreamDetailProject,
-    required TResult Function(String id) detail,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
   }) {
-    return detail(id);
+    return reqDetail(id);
   }
 
   @override
@@ -542,9 +568,10 @@ class _$ReqDetailProject implements ReqDetailProject {
     TResult? Function()? getAll,
     TResult? Function()? reqCreateProject,
     TResult? Function(String id)? reqStreamDetailProject,
-    TResult? Function(String id)? detail,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
   }) {
-    return detail?.call(id);
+    return reqDetail?.call(id);
   }
 
   @override
@@ -553,11 +580,12 @@ class _$ReqDetailProject implements ReqDetailProject {
     TResult Function()? getAll,
     TResult Function()? reqCreateProject,
     TResult Function(String id)? reqStreamDetailProject,
-    TResult Function(String id)? detail,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
     required TResult orElse(),
   }) {
-    if (detail != null) {
-      return detail(id);
+    if (reqDetail != null) {
+      return reqDetail(id);
     }
     return orElse();
   }
@@ -569,9 +597,10 @@ class _$ReqDetailProject implements ReqDetailProject {
     required TResult Function(ReqCreateProject value) reqCreateProject,
     required TResult Function(ReqStreamDetailProject value)
         reqStreamDetailProject,
-    required TResult Function(ReqDetailProject value) detail,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
   }) {
-    return detail(this);
+    return reqDetail(this);
   }
 
   @override
@@ -580,9 +609,10 @@ class _$ReqDetailProject implements ReqDetailProject {
     TResult? Function(ReqGetAllProjects value)? getAll,
     TResult? Function(ReqCreateProject value)? reqCreateProject,
     TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult? Function(ReqDetailProject value)? detail,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
   }) {
-    return detail?.call(this);
+    return reqDetail?.call(this);
   }
 
   @override
@@ -591,23 +621,145 @@ class _$ReqDetailProject implements ReqDetailProject {
     TResult Function(ReqGetAllProjects value)? getAll,
     TResult Function(ReqCreateProject value)? reqCreateProject,
     TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
-    TResult Function(ReqDetailProject value)? detail,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
     required TResult orElse(),
   }) {
-    if (detail != null) {
-      return detail(this);
+    if (reqDetail != null) {
+      return reqDetail(this);
     }
     return orElse();
   }
 }
 
 abstract class ReqDetailProject implements ProjectsEvent {
-  factory ReqDetailProject(final String id) = _$ReqDetailProject;
+  const factory ReqDetailProject(final String id) = _$ReqDetailProject;
 
   String get id;
   @JsonKey(ignore: true)
   _$$ReqDetailProjectCopyWith<_$ReqDetailProject> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReqDeleteProjectCopyWith<$Res> {
+  factory _$$ReqDeleteProjectCopyWith(
+          _$ReqDeleteProject value, $Res Function(_$ReqDeleteProject) then) =
+      __$$ReqDeleteProjectCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReqDeleteProjectCopyWithImpl<$Res>
+    extends _$ProjectsEventCopyWithImpl<$Res, _$ReqDeleteProject>
+    implements _$$ReqDeleteProjectCopyWith<$Res> {
+  __$$ReqDeleteProjectCopyWithImpl(
+      _$ReqDeleteProject _value, $Res Function(_$ReqDeleteProject) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReqDeleteProject implements ReqDeleteProject {
+  const _$ReqDeleteProject();
+
+  @override
+  String toString() {
+    return 'ProjectsEvent.reqDelete()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReqDeleteProject);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAll,
+    required TResult Function() reqCreateProject,
+    required TResult Function(String id) reqStreamDetailProject,
+    required TResult Function(String id) reqDetail,
+    required TResult Function() reqDelete,
+  }) {
+    return reqDelete();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAll,
+    TResult? Function()? reqCreateProject,
+    TResult? Function(String id)? reqStreamDetailProject,
+    TResult? Function(String id)? reqDetail,
+    TResult? Function()? reqDelete,
+  }) {
+    return reqDelete?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAll,
+    TResult Function()? reqCreateProject,
+    TResult Function(String id)? reqStreamDetailProject,
+    TResult Function(String id)? reqDetail,
+    TResult Function()? reqDelete,
+    required TResult orElse(),
+  }) {
+    if (reqDelete != null) {
+      return reqDelete();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReqGetAllProjects value) getAll,
+    required TResult Function(ReqCreateProject value) reqCreateProject,
+    required TResult Function(ReqStreamDetailProject value)
+        reqStreamDetailProject,
+    required TResult Function(ReqDetailProject value) reqDetail,
+    required TResult Function(ReqDeleteProject value) reqDelete,
+  }) {
+    return reqDelete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ReqGetAllProjects value)? getAll,
+    TResult? Function(ReqCreateProject value)? reqCreateProject,
+    TResult? Function(ReqStreamDetailProject value)? reqStreamDetailProject,
+    TResult? Function(ReqDetailProject value)? reqDetail,
+    TResult? Function(ReqDeleteProject value)? reqDelete,
+  }) {
+    return reqDelete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReqGetAllProjects value)? getAll,
+    TResult Function(ReqCreateProject value)? reqCreateProject,
+    TResult Function(ReqStreamDetailProject value)? reqStreamDetailProject,
+    TResult Function(ReqDetailProject value)? reqDetail,
+    TResult Function(ReqDeleteProject value)? reqDelete,
+    required TResult orElse(),
+  }) {
+    if (reqDelete != null) {
+      return reqDelete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReqDeleteProject implements ProjectsEvent {
+  const factory ReqDeleteProject() = _$ReqDeleteProject;
 }
 
 /// @nodoc
@@ -620,6 +772,7 @@ mixin _$ProjectsState {
   ProjectEntities get projectEntities => throw _privateConstructorUsedError;
   EnumProjectState get enumProjectState => throw _privateConstructorUsedError;
   String get projectsId => throw _privateConstructorUsedError;
+  ProjectsFailure? get projectsFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProjectsStateCopyWith<ProjectsState> get copyWith =>
@@ -638,9 +791,11 @@ abstract class $ProjectsStateCopyWith<$Res> {
       List<ProjectEntities> list,
       ProjectEntities projectEntities,
       EnumProjectState enumProjectState,
-      String projectsId});
+      String projectsId,
+      ProjectsFailure? projectsFailure});
 
   $ProjectEntitiesCopyWith<$Res> get projectEntities;
+  $ProjectsFailureCopyWith<$Res>? get projectsFailure;
 }
 
 /// @nodoc
@@ -662,6 +817,7 @@ class _$ProjectsStateCopyWithImpl<$Res, $Val extends ProjectsState>
     Object? projectEntities = null,
     Object? enumProjectState = null,
     Object? projectsId = null,
+    Object? projectsFailure = freezed,
   }) {
     return _then(_value.copyWith(
       projectsNameController: null == projectsNameController
@@ -688,6 +844,10 @@ class _$ProjectsStateCopyWithImpl<$Res, $Val extends ProjectsState>
           ? _value.projectsId
           : projectsId // ignore: cast_nullable_to_non_nullable
               as String,
+      projectsFailure: freezed == projectsFailure
+          ? _value.projectsFailure
+          : projectsFailure // ignore: cast_nullable_to_non_nullable
+              as ProjectsFailure?,
     ) as $Val);
   }
 
@@ -696,6 +856,18 @@ class _$ProjectsStateCopyWithImpl<$Res, $Val extends ProjectsState>
   $ProjectEntitiesCopyWith<$Res> get projectEntities {
     return $ProjectEntitiesCopyWith<$Res>(_value.projectEntities, (value) {
       return _then(_value.copyWith(projectEntities: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProjectsFailureCopyWith<$Res>? get projectsFailure {
+    if (_value.projectsFailure == null) {
+      return null;
+    }
+
+    return $ProjectsFailureCopyWith<$Res>(_value.projectsFailure!, (value) {
+      return _then(_value.copyWith(projectsFailure: value) as $Val);
     });
   }
 }
@@ -714,10 +886,13 @@ abstract class _$$_ProjectsStateCopyWith<$Res>
       List<ProjectEntities> list,
       ProjectEntities projectEntities,
       EnumProjectState enumProjectState,
-      String projectsId});
+      String projectsId,
+      ProjectsFailure? projectsFailure});
 
   @override
   $ProjectEntitiesCopyWith<$Res> get projectEntities;
+  @override
+  $ProjectsFailureCopyWith<$Res>? get projectsFailure;
 }
 
 /// @nodoc
@@ -737,6 +912,7 @@ class __$$_ProjectsStateCopyWithImpl<$Res>
     Object? projectEntities = null,
     Object? enumProjectState = null,
     Object? projectsId = null,
+    Object? projectsFailure = freezed,
   }) {
     return _then(_$_ProjectsState(
       projectsNameController: null == projectsNameController
@@ -763,6 +939,10 @@ class __$$_ProjectsStateCopyWithImpl<$Res>
           ? _value.projectsId
           : projectsId // ignore: cast_nullable_to_non_nullable
               as String,
+      projectsFailure: freezed == projectsFailure
+          ? _value.projectsFailure
+          : projectsFailure // ignore: cast_nullable_to_non_nullable
+              as ProjectsFailure?,
     ));
   }
 }
@@ -776,7 +956,8 @@ class _$_ProjectsState extends _ProjectsState {
       required final List<ProjectEntities> list,
       required this.projectEntities,
       required this.enumProjectState,
-      required this.projectsId})
+      required this.projectsId,
+      required this.projectsFailure})
       : _list = list,
         super._();
 
@@ -798,6 +979,8 @@ class _$_ProjectsState extends _ProjectsState {
   final EnumProjectState enumProjectState;
   @override
   final String projectsId;
+  @override
+  final ProjectsFailure? projectsFailure;
 
   @JsonKey(ignore: true)
   @override
@@ -813,7 +996,8 @@ abstract class _ProjectsState extends ProjectsState {
       required final List<ProjectEntities> list,
       required final ProjectEntities projectEntities,
       required final EnumProjectState enumProjectState,
-      required final String projectsId}) = _$_ProjectsState;
+      required final String projectsId,
+      required final ProjectsFailure? projectsFailure}) = _$_ProjectsState;
   _ProjectsState._() : super._();
 
   @override
@@ -828,6 +1012,8 @@ abstract class _ProjectsState extends ProjectsState {
   EnumProjectState get enumProjectState;
   @override
   String get projectsId;
+  @override
+  ProjectsFailure? get projectsFailure;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectsStateCopyWith<_$_ProjectsState> get copyWith =>

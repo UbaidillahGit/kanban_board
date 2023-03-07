@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kanban_board/application/splash/bloc/splash_bloc.dart';
-import 'package:kanban_board/domain/user/user_repo.dart';
-import 'package:kanban_board/infrastructure/local/secure_storage.dart';
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart';
+import 'package:kanban_board/infrastructure/remote/user_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

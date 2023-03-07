@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kanban_board/application/board/bloc/board_bloc.dart';
 import 'package:kanban_board/application/projects/bloc/projects_bloc.dart';
-import 'package:kanban_board/domain/projects/entities/projects.dart';
 import 'package:kanban_board/presentation/board/widgets/appbar.dart';
-import 'package:kanban_board/presentation/board/widgets/board_group.dart';
+import 'package:kanban_board/presentation/board/widgets/board/done.dart';
+import 'package:kanban_board/presentation/board/widgets/board/in_progress.dart';
+import 'package:kanban_board/presentation/board/widgets/board/to_do.dart';
 import 'package:kanban_board/presentation/core/injection/injection.dart';
 
 class BoardPage extends StatefulWidget {
@@ -24,7 +25,6 @@ class _BoardPageState extends State<BoardPage> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          // create: (context) => getIt<ProjectsBloc>()..add(ReqDetailProject(widget.projectsId)),
           create: (context) => getIt<ProjectsBloc>()..add(ReqStreamDetailProject(widget.projectsId)),
         ),
         BlocProvider(
@@ -35,7 +35,6 @@ class _BoardPageState extends State<BoardPage> {
         listeners: [
           BlocListener<ProjectsBloc, ProjectsState>(
             listener: (context, state) {
-              // log('ProjectsBloc listner ${state.enumProjectState}');
               if (state.enumProjectState == EnumProjectState.resDetailProject) {
                 context.read<BoardBloc>().add(ReqProjectData(projectData: state.projectEntities));
               }
@@ -47,62 +46,23 @@ class _BoardPageState extends State<BoardPage> {
           body: BlocConsumer<BoardBloc, BoardState>(
             listener: (context, state) {},
             builder: (context, boardState) {
-              // log('BlocConsumer builder');
               return CarouselSlider.builder(
                 carouselController: boardState.carouselController,
                 itemCount: 3,
                 itemBuilder: (context, index, realIndex) {
                   if (index == 0) {
-                    // return ;
-                    return BlocBuilder<ProjectsBloc, ProjectsState>(
-                      builder: (context, state) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 400,
-                            child: BoardGroup(
-                              groupName: 'To Do',
-                              // boardEntities: state.projectEntities.toDo,
-                              boardEntities: state.projectEntities.toDo ?? BoardEntities(),
-                            ),
-                          ),
-                        );
-                      },
-                    );
+
+                    return const ToDoBoard();
+
                   } else if (index == 1) {
-                    // return ;
-                    return BlocBuilder<ProjectsBloc, ProjectsState>(
-                      builder: (context, state) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 400,
-                            child: BoardGroup(
-                              groupName: 'In Progress',
-                              // boardEntities: boardState.boardInProgress,
-                              boardEntities: state.projectEntities.inProgress ?? BoardEntities(),
-                            ),
-                          ),
-                        );
-                      },
-                    );
+
+                    return const InProgressBoard();
+
                   } else if (index == 2) {
-                    return BlocBuilder<ProjectsBloc, ProjectsState>(
-                      builder: (context, state) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 400,
-                            child: BoardGroup(
-                              groupName: 'Done',
-                              // boardEntities: boardState.boardInProgress,
-                              boardEntities: state.projectEntities.done ?? BoardEntities(),
-                            ),
-                          ),
-                        );
-                      },
-                    );
+
+                    return const DoneBoard();
                   }
+
                   return Container();
                 },
                 options: CarouselOptions(

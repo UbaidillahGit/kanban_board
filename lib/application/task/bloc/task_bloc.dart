@@ -5,14 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:kanban_board/domain/board/board_repo.dart';
 import 'package:kanban_board/domain/projects/entities/projects.dart';
-import 'package:kanban_board/domain/projects/projects_repo.dart';
-import 'package:kanban_board/infrastructure/local/secure_storage.dart';
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart';
+import 'package:kanban_board/infrastructure/remote/board_repo.dart';
+import 'package:kanban_board/infrastructure/remote/projects_repo.dart';
 
 part 'task_bloc.freezed.dart';
 part 'task_event.dart';
 part 'task_state.dart';
+
+/// [Naming Convention]
+
+/// [req] keyword stands for [Request]
+/// [res] keyword stands for [Response]
+
+/// [Enum] to identify which [Response] type to be return
 
 @Injectable()
 class TaskBloc extends Bloc<TaskEvent, TaskState> {
@@ -133,7 +140,6 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     late EnumTaskState enumTaskState;
     String? errMsg;
 
-    // log('_onReqCreateTask ${state.taskName.text} | ${state.taskDescription.text} | ${state.labelId} | ${state.emailAssignee}');
     if (state.taskName.text.isNotEmpty && state.taskDescription.text.isNotEmpty && state.labelId.isNotEmpty && state.emailAssignee.isNotEmpty) {
       enumTaskState = EnumTaskState.resCreateTask;
       boardRepository.createTask(
@@ -180,7 +186,6 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
   }
 
   void _onReqUpdateTask(ReqUpdateTask event, Emitter<TaskState> emit) {
-    // log('_onReqUpdateTask ${state.boardName} | ${state.taskName.text} | ${state.taskDescription.text} | ${state.labelId} | ${state.emailAssignee}');
     late EnumTaskState enumTaskState;
     String? errMsg;
     if (state.taskName.text.isNotEmpty && state.labelId.isNotEmpty && state.emailAssignee.isNotEmpty) {

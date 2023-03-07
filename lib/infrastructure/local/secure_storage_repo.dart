@@ -10,6 +10,8 @@ abstract class SecureStorageRepository {
 
   void setCurrentOpenedProject(String projectId);
 
+  Future<void> setClearAll();
+
   Future<String?> getUserDisplayName();
 
   Future<String?> getUserEmail();
@@ -47,6 +49,9 @@ class LocalSecureStorage implements SecureStorageRepository {
   @override
   setCurrentOpenedProject(String projectId) async => 
       await _storage.write(key: _currentOpenedProject, value: projectId);
+
+   @override
+   setClearAll() async => _storage.deleteAll();   
 
   @override
   Future<String> getUserDisplayName() async =>

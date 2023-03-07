@@ -5,7 +5,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:kanban_board/infrastructure/local/secure_storage.dart' as _i2;
+import 'package:google_sign_in/google_sign_in.dart' as _i5;
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart'
+    as _i2;
+import 'package:kanban_board/infrastructure/remote/auth_repo.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -61,6 +64,15 @@ class MockSecureStorageRepository extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
+  _i3.Future<void> setClearAll() => (super.noSuchMethod(
+        Invocation.method(
+          #setClearAll,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+  @override
   _i3.Future<String?> getUserDisplayName() => (super.noSuchMethod(
         Invocation.method(
           #getUserDisplayName,
@@ -92,4 +104,31 @@ class MockSecureStorageRepository extends _i1.Mock
         ),
         returnValue: _i3.Future<String?>.value(),
       ) as _i3.Future<String?>);
+}
+
+/// A class which mocks [AuthRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthRepository extends _i1.Mock implements _i4.AuthRepository {
+  MockAuthRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Future<_i5.GoogleSignInAccount?> goggleSignIn() => (super.noSuchMethod(
+        Invocation.method(
+          #goggleSignIn,
+          [],
+        ),
+        returnValue: _i3.Future<_i5.GoogleSignInAccount?>.value(),
+      ) as _i3.Future<_i5.GoogleSignInAccount?>);
+  @override
+  _i3.Future<void> signOut() => (super.noSuchMethod(
+        Invocation.method(
+          #signOut,
+          [],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

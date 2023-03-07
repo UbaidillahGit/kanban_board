@@ -6,10 +6,7 @@ import 'package:kanban_board/presentation/core/global_const_value.dart';
 import 'package:kanban_board/presentation/core/global_widgets.dart';
 
 class AppBarDetailTask extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarDetailTask({
-    super.key,
-  });
-  // final  CarouselController buttonCarouselController;
+  const AppBarDetailTask({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -22,7 +19,7 @@ class AppBarDetailTask extends StatelessWidget implements PreferredSizeWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: GlobalWidgets().text(txt: state.enumTaskState.toString()),
+          title: GlobalWidgets().text(txt: state.boardName.toString()),
           leading: IconButton(
             onPressed: () => context.router.pop(),
             icon: const Icon(
@@ -32,7 +29,6 @@ class AppBarDetailTask extends StatelessWidget implements PreferredSizeWidget {
           ),
           actions: [
             IconButton(
-              // onPressed: () => context.router.push(const NewProjectsRoute()),
               onPressed: () {},
               icon: const Icon(
                 Icons.drag_indicator_sharp,

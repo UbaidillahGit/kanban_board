@@ -30,7 +30,6 @@ class NewProjectsPage extends StatelessWidget {
               child: Center(
                 child: Column(
                   children: [
-                    // GlobalWidgets().text(txt: 'Create Projects'),
                     TextFormField(
                       controller: state.projectsNameController,
                       decoration: const InputDecoration(

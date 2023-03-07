@@ -9,25 +9,22 @@ import 'package:cloud_firestore/cloud_firestore.dart' as _i5;
 import 'package:firebase_auth/firebase_auth.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:kanban_board/application/board/bloc/board_bloc.dart' as _i17;
-import 'package:kanban_board/application/home/bloc/home_bloc.dart' as _i12;
+import 'package:kanban_board/application/board/bloc/board_bloc.dart' as _i15;
+import 'package:kanban_board/application/home/bloc/home_bloc.dart' as _i11;
 import 'package:kanban_board/application/login_social/bloc/login_bloc.dart'
-    as _i13;
+    as _i12;
 import 'package:kanban_board/application/projects/bloc/projects_bloc.dart'
-    as _i18;
+    as _i16;
 import 'package:kanban_board/application/splash/bloc/splash_bloc.dart' as _i7;
-import 'package:kanban_board/application/task/bloc/task_bloc.dart' as _i16;
-import 'package:kanban_board/domain/board/board_repo.dart' as _i10;
-import 'package:kanban_board/domain/projects/projects_repo.dart' as _i14;
-import 'package:kanban_board/domain/user/user_repo.dart' as _i8;
-import 'package:kanban_board/infrastructure/local/secure_storage.dart' as _i6;
-import 'package:kanban_board/infrastructure/remote/board_repo_impl.dart'
-    as _i11;
-import 'package:kanban_board/infrastructure/remote/projects_repo_impl.dart'
-    as _i15;
-import 'package:kanban_board/infrastructure/remote/user_repo_impl.dart' as _i9;
+import 'package:kanban_board/application/task/bloc/task_bloc.dart' as _i14;
+import 'package:kanban_board/infrastructure/local/secure_storage_repo.dart'
+    as _i6;
+import 'package:kanban_board/infrastructure/remote/auth_repo.dart' as _i9;
+import 'package:kanban_board/infrastructure/remote/board_repo.dart' as _i10;
+import 'package:kanban_board/infrastructure/remote/projects_repo.dart' as _i13;
+import 'package:kanban_board/infrastructure/remote/user_repo.dart' as _i8;
 import 'package:kanban_board/presentation/core/injection/injectable_module.dart'
-    as _i19;
+    as _i17;
 import 'package:kanban_board/presentation/core/routes/router.dart'
     as _i3; // ignore_for_file: unnecessary_lambdas
 
@@ -51,36 +48,41 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i6.LocalSecureStorage());
     gh.factory<_i7.SplashBloc>(
         () => _i7.SplashBloc(gh<_i6.SecureStorageRepository>()));
-    gh.lazySingleton<_i8.UserRepository>(() => _i9.UserRepositoryImplement());
-    gh.lazySingleton<_i10.BoardRepository>(() => _i11.BoardRepositoryImplement(
+    gh.lazySingleton<_i8.UserRepository>(() => _i8.UserRepositoryImplement());
+    gh.lazySingleton<_i9.AuthRepository>(
+        () => _i9.AuthRepositoryImplements(gh<_i6.SecureStorageRepository>()));
+    gh.lazySingleton<_i10.BoardRepository>(() => _i10.BoardRepositoryImplement(
           gh<_i5.FirebaseFirestore>(),
           gh<_i6.SecureStorageRepository>(),
         ));
-    gh.factory<_i12.HomeBloc>(
-        () => _i12.HomeBloc(gh<_i6.SecureStorageRepository>()));
-    gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(
-          gh<_i4.FirebaseAuth>(),
-          gh<_i8.UserRepository>(),
+    gh.factory<_i11.HomeBloc>(() => _i11.HomeBloc(
           gh<_i6.SecureStorageRepository>(),
+          gh<_i9.AuthRepository>(),
         ));
-    gh.lazySingleton<_i14.ProjectsRepository>(
-        () => _i15.ProjectsRepositoryImplement(
+    gh.factory<_i12.LoginBloc>(() => _i12.LoginBloc(
+          gh<_i4.FirebaseAuth>(),
+          gh<_i9.AuthRepository>(),
+          gh<_i6.SecureStorageRepository>(),
+          gh<_i8.UserRepository>(),
+        ));
+    gh.lazySingleton<_i13.ProjectsRepository>(
+        () => _i13.ProjectsRepositoryImplement(
               gh<_i5.FirebaseFirestore>(),
               gh<_i6.SecureStorageRepository>(),
             ));
-    gh.factory<_i16.TaskBloc>(() => _i16.TaskBloc(
-          gh<_i14.ProjectsRepository>(),
+    gh.factory<_i14.TaskBloc>(() => _i14.TaskBloc(
+          gh<_i13.ProjectsRepository>(),
           gh<_i10.BoardRepository>(),
           gh<_i6.SecureStorageRepository>(),
         ));
-    gh.factory<_i17.BoardBloc>(
-        () => _i17.BoardBloc(gh<_i10.BoardRepository>()));
-    gh.factory<_i18.ProjectsBloc>(() => _i18.ProjectsBloc(
-          gh<_i14.ProjectsRepository>(),
+    gh.factory<_i15.BoardBloc>(
+        () => _i15.BoardBloc(gh<_i10.BoardRepository>()));
+    gh.factory<_i16.ProjectsBloc>(() => _i16.ProjectsBloc(
+          gh<_i13.ProjectsRepository>(),
           gh<_i6.SecureStorageRepository>(),
         ));
     return this;
   }
 }
 
-class _$InjectableModule extends _i19.InjectableModule {}
+class _$InjectableModule extends _i17.InjectableModule {}

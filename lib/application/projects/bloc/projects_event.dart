@@ -8,7 +8,9 @@ class ProjectsEvent with _$ProjectsEvent {
 
   const factory ProjectsEvent.reqCreateProject() = ReqCreateProject;
 
-  factory ProjectsEvent.reqStreamDetailProject(String id) = ReqStreamDetailProject;
+  const factory ProjectsEvent.reqStreamDetailProject(String id) = ReqStreamDetailProject;
 
-  factory ProjectsEvent.detail(String id) = ReqDetailProject;
+  const factory ProjectsEvent.reqDetail(String id) = ReqDetailProject;
+
+  const factory ProjectsEvent.reqDelete() = ReqDeleteProject;
 }

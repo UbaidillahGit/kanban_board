@@ -73,28 +73,3 @@ class CollaboratorEntities with _$CollaboratorEntities {
 
   factory CollaboratorEntities.fromJson(Map<String, dynamic> json) => _$CollaboratorEntitiesFromJson(json);
 }
-
-
-// @freezed
-// class ModelMerchants with _$ModelMerchants {
-//   factory ModelMerchants({
-//     @JsonKey(name: 'merchants') List<ProjectEntities>? merchantsList
-//   }) = _ModelMerchants;
-
-//   factory ModelMerchants.fromJson(Map<String, Object?> json) => _$ModelMerchantsFromJson(json);
-// }
-
-// @freezed
-// class MerchantEntities with _$MerchantEntities {
-//   factory MerchantEntities({
-//     @JsonKey(name: 'id') int? id,
-//     @JsonKey(name: 'name') String? name,
-//     @JsonKey(name: 'address') String? address,
-//     @JsonKey(name: 'image') String? image,
-//     @JsonKey(name: 'merchant_category') String? merchantCategory,
-//     // @JsonKey(name: 'products_category') List<ProductsCategoryEntities>? productsCategory,
-//   }) = _MerchantEntities;
-
-//   factory MerchantEntities.fromJson(Map<String, Object?> json) 
-//     => _$MerchantEntitiesFromJson(json);
-// }

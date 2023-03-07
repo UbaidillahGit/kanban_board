@@ -7,8 +7,6 @@ import 'package:kanban_board/presentation/core/global_const_value.dart';
 class DetailTaskDescription extends StatelessWidget {
   const DetailTaskDescription({super.key});
 
-  // DetailTaskDescription(String tasDescription, {super.key}) : super();
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TaskBloc, TaskState>(
