@@ -3,6 +3,9 @@
 A tracking app for tasks.
 where users can create, edit, and move tasks between different columns (e.g. "To Do", "In Progress", "Done").
 
+# Authentication
+our app will use Google SignIn feature, no need to register manually
+
 # Architeture
 
 using DDD (Domain-Drivers Design) will have four layer
@@ -24,6 +27,16 @@ using DDD (Domain-Drivers Design) will have four layer
 
 State management using BLoC with Freezed while also implement the code generation to save some of lines, which is also support
 for union types and pattern-matching
+
+# Routing
+
+auto_route with it's code generation will handle our overall routing app
+
+# Testing
+the
+
+# APK file
+- [https://drive.google.com/drive/folders/1Q6IlcobEZbmtcPzeVvutXv84MVNnCOm_?usp=sharing]
 
 ## Getting Started
 
