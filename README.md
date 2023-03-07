@@ -1,16 +1,15 @@
 # Kanban Board
 
-A tracking app for tasks.
-where users can create, edit, and move tasks between different columns (e.g. "To Do", "In Progress", "Done").
+A tracking app for tasks where users can create, edit, and move tasks between different columns (e.g. "To Do", "In Progress", "Done").
 
 # Authentication
-Our app will use Google SignIn authentication method, no need to register manually
+Our app will use Google SignIn Authentication method, no need to register manually.
 
 # Database
-We're using Firebase firestore to record the data in real-time, so the task changes between board can synchonize immedieately
+We're using Firebase firestore to record the data in real-time, so the task changes between board can synchronize immedieately.
 
 # Architeture
-As most crucial part of the app development the DDD (Domain-Driven Design) is chosen to shape our app, which is will have four layer as follows
+As most crucial part of the app development the DDD (Domain-Driven Design) is chosen to shape our app because it's clear definition on each layer, which is will have four layer as follows
 - "Presentation"
     which is handle all of the widgets and state of the Widget's.
     As the output of the "Business Logic" this layer will directly associated with Application layer 
@@ -27,13 +26,13 @@ As most crucial part of the app development the DDD (Domain-Driven Design) is ch
 
 # State Managemet
 State management using BLoC with Freezed while also implement the code generation to save some of lines, which is also support
-for union types and pattern-matching
+for union types and pattern-matching.
 
 # Routing
-auto_route with it's code generation will handle our overall routing app
+auto_route with it's code generation will handle our overall routing app.
 
 # Testing
-The app is tested with the support of Mockito package with code generation
+The app is tested with the support of Mockito package with code generation.
 
 # APK file
 - https://drive.google.com/drive/folders/1Q6IlcobEZbmtcPzeVvutXv84MVNnCOm_?usp=sharing
