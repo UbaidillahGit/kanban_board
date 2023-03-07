@@ -6,7 +6,8 @@ where users can create, edit, and move tasks between different columns (e.g. "To
 # Architeture
 using DDD (Domain-Drivers Design) will have four layer
     - Presentation
-        Which is handle all of the widgets and state of the Widget's, as the output of the "Business Logic" this layer will directly associated with Application layer 
+        Which is handle all of the widgets and state of the Widget's.
+        As the output of the "Business Logic" this layer will directly associated with Application layer 
 
     - Application
         The role of this layer is to perform the business logic using the BLoC StateManagement.
