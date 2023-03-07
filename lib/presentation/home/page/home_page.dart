@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
             if (state.enumProjectState == EnumProjectState.emptyProjects) {
               return Center(
                 child: GlobalWidgets().text(
-                  txt: 'Empty projets',
+                  txt: 'Empty projets\nLet\'s create new one',
                   color: GlobalConstants.mainThemeColor,
                   fontWeight: FontWeight.bold,
                 ),

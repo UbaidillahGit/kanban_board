@@ -19,7 +19,8 @@ As most crucial part of the app development the DDD (Domain-Driven Design) is ch
     This layer will be associated with Presentation layer, which is will output the process of the business logic
 
 - "Domain"
-    this layer will contain all entities of our app and will not depend to any other layers.
+    this layer will contain all entities of our app and will not depend to any other layers instead the other layers
+    will depends on this "Domain" layer
 
 - "Infrastructure"
     This layer will hold the data transfers both "remote" or "local", each data call will be covered on a "repository" class

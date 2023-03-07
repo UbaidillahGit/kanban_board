@@ -40,24 +40,23 @@ void main() {
     );
   });
 
-  blocTest(
-    'ReqDetailProject',
-    build: () => projectsBloc,
-    act: (bloc) => bloc.add(const ReqDetailProject(mocksAnyString)),
-    setUp: () {
-      when(mockProjectsRepository.detail(mocksAnyString)).thenAnswer((realInvocation) async => Either.right(projectEntities));
-    },
-    expect: () => equals([
-      projectsBloc.state.copyWith(
-        projectEntities: projectEntities,
-        enumProjectState: EnumProjectState.resDetailProject,
-      )
-    ]),
-    // expect: () => <ProjectsState>[
-    //   projectsBloc.state.copyWith(
-    //     projectEntities: projectEntities,
-    //     enumProjectState: EnumProjectState.resDetailProject,
-    //   )
-    // ],
-  );
+
+group('Projects Bloc', () {
+    blocTest(
+      'ReqDetailProject',
+      build: () => projectsBloc,
+      act: (bloc) => bloc.add(const ReqDetailProject(mocksAnyString)),
+      setUp: () {
+        when(mockProjectsRepository.detail(mocksAnyString)).thenAnswer((realInvocation) async => Either.right(projectEntities));
+      },
+      expect: () => equals([
+        projectsBloc.state.copyWith(
+          projectEntities: projectEntities,
+          enumProjectState: EnumProjectState.resDetailProject,
+        )
+      ]),
+    );
+
+    // blocTest('ReqCreate', build: build)
+  });
 }

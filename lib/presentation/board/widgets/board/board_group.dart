@@ -89,7 +89,10 @@ class BoardGroup extends StatelessWidget {
                       color: candidateData.isNotEmpty ? Colors.greenAccent.withOpacity(0.2) : Colors.transparent,
                     ),
                     child: boardEntities.tasks == null
-                    ? Center(child: GlobalWidgets().loading())
+                    ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [GlobalWidgets().loading()],
+                    )
                     : Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -99,7 +102,7 @@ class BoardGroup extends StatelessWidget {
                           itemCount: boardEntities.tasks!.length,
                           itemBuilder: (context, index) {
                             return LongPressDraggable<TaskEntities>(
-                              delay: const Duration(milliseconds: 100),
+                              delay: const Duration(milliseconds: 200),
                               feedback: SizedBox(
                                 width: 370,
                                 child: TaskCardFeedback(taskEntities: boardEntities.tasks![index]),

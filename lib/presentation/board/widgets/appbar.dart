@@ -20,7 +20,7 @@ class BoardAppBar extends StatelessWidget implements PreferredSizeWidget {
     return BlocConsumer<ProjectsBloc, ProjectsState>(
       listener: (context, state) 
         => state.enumProjectState == EnumProjectState.resDeleteProject 
-        ? context.router.pushAndPopUntil(const HomeRoute(), predicate: (route) => true) 
+        ? context.router.pushAndPopUntil(const HomeRoute(), predicate: (route) => false) 
         : null,
       builder: (context, state) {
         return AppBar(

@@ -13,8 +13,6 @@ class HomeState with _$HomeState {
   factory HomeState.initial() => const HomeState(
         enumHomeState: EnumHomeState.initial,
         userDisplayName: '',
-        userPhotoUrl: 'https://dummyimage.com/skyscraper/f0f/f',
+        userPhotoUrl: 'https://dummyimage.com/skyscraper',
       );
-
-  // const factory HomeState.resUserInfor() = ResUserInfo;
 }

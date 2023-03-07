@@ -35,6 +35,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 state.userPhotoUrl,
                 height: 10,
                 width: 10,
+                fit: BoxFit.cover,
               ),
             ),
           ),

@@ -11,23 +11,17 @@ import 'splash_bloc_test.mocks.dart';
 @GenerateNiceMocks(
   [
     MockSpec<SecureStorageRepository>(as: #MockSecureStorageRepository),
-    // MockSpec<FirebaseAuth>(as: #MockFirebaseAuth),
      MockSpec<UserRepository>(as: #MockUserRepository),
   ],
 )
 
 void main() {
   late SplashBloc splashBloc;
-  // late MockFirebaseAuth mockFirebaseAuth;
-  // late MockSplashBloc mockSplashBloc;
   late MockSecureStorageRepository mockSecureStorageRepository;
 
   setUp(() {
-    // WidgetsFlutterBinding.ensureInitialized();
     mockSecureStorageRepository = MockSecureStorageRepository();
     splashBloc = SplashBloc(mockSecureStorageRepository);
-    
-    // mockFirebaseAuth = MockFirebaseAuth();
   });
 
   group('Splash Bloc Testing', () {
