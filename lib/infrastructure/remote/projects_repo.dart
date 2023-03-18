@@ -23,7 +23,7 @@ abstract class ProjectsRepository {
 
   Future<Either<ProjectsFailure, String>> create(ProjecParam projectEntities);
 
-   Future<Either<ProjectsFailure, Unit>> delete(String id);
+  Future<Either<ProjectsFailure, Unit>> delete(String id);
 }
 
 @LazySingleton(as: ProjectsRepository)

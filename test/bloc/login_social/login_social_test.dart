@@ -72,25 +72,35 @@ void main() {
      
       const String mocksAnyString = 'mocks_any_string';
 
-      when(mockAuthRepository.goggleSignIn()).thenAnswer((_) async => mockGoogleSignInAccount);
+      when(mockAuthRepository.goggleSignIn())
+        .thenAnswer((_) async => mockGoogleSignInAccount);
 
-      when(mockGoogleSignInAccount.authentication).thenAnswer((_) async => mockGoogleSignInAuthentication);
+      when(mockGoogleSignInAccount.authentication)
+        .thenAnswer((_) async => mockGoogleSignInAuthentication);
 
-      when(mockGoogleSignInAuthentication.accessToken).thenAnswer((_) => mocksAnyString);
+      when(mockGoogleSignInAuthentication.accessToken)
+        .thenAnswer((_) => mocksAnyString);
 
-      when(mockGoogleSignInAuthentication.idToken).thenAnswer((_) => mocksAnyString);
+      when(mockGoogleSignInAuthentication.idToken)
+        .thenAnswer((_) => mocksAnyString);
 
-      when(mockFirebaseAuth.signInWithCredential(any)).thenAnswer((_) => Future.value(mockUserCredential));
+      when(mockFirebaseAuth.signInWithCredential(any))
+        .thenAnswer((_) => Future.value(mockUserCredential));
 
-      when(mockUserCredential.user).thenReturn(mockUser);
+      when(mockUserCredential.user)
+        .thenReturn(mockUser);
 
-      when(mockUserRepository.create(any)).thenAnswer((_) async => Future.value(Either.of(unit)) );
+      when(mockUserRepository.create(any))
+        .thenAnswer((_) async => Future.value(Either.of(unit)) );
 
-      when(mockUser.displayName).thenReturn(mocksAnyString);
+      when(mockUser.displayName)
+        .thenReturn(mocksAnyString);
 
-      when(mockUser.email).thenReturn(mocksAnyString);
+      when(mockUser.email)
+        .thenReturn(mocksAnyString);
 
-      when(mockUser.photoURL).thenReturn(mocksAnyString);
+      when(mockUser.photoURL)
+        .thenReturn(mocksAnyString);
 
     },
   );

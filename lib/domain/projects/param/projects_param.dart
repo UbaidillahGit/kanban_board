@@ -13,9 +13,10 @@ abstract class ProjecParam with _$ProjecParam{
 
   const ProjecParam._();
 
-  factory ProjecParam.empty() => ProjecParam(
-        projectName: '',
-        projectDescription: '',
-        projectOwner: '',
-      );
+  factory ProjecParam.empty() 
+  => ProjecParam(
+    projectName: '',
+    projectDescription: '',
+    projectOwner: '',
+  );
 }
