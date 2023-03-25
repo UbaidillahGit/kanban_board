@@ -68,6 +68,7 @@ class BoardBloc extends Bloc<BoardEvent, BoardState> {
       event.taskEntities,
       TaskEntities(
         taskName: event.taskEntities.taskName,
+        description: event.taskEntities.description,
         assigneeEntities: event.taskEntities.assigneeEntities,
         label: event.taskEntities.label,
         currentBoard: event.boardDestination,

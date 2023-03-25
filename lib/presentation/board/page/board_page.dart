@@ -51,7 +51,7 @@ class _BoardPageState extends State<BoardPage> {
                 itemCount: 3,
                 itemBuilder: (context, index, realIndex) {
                   if (index == 0) {
-
+                    
                     return const ToDoBoard();
 
                   } else if (index == 1) {

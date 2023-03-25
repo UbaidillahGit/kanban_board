@@ -142,13 +142,21 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
 
     if (state.taskName.text.isNotEmpty && state.taskDescription.text.isNotEmpty && state.labelId.isNotEmpty && state.emailAssignee.isNotEmpty) {
       enumTaskState = EnumTaskState.resCreateTask;
+      
+      final assigneEnitites = AssigneeEntities(
+        email: state.emailAssignee,
+        name: null,
+        photoUrl: null,
+      );
+
       boardRepository.createTask(
         state.boardName,
         TaskEntities(
           taskName: state.taskName.text,
           currentBoard: state.boardName,
           label: state.labelId,
-          assigneeEntities: AssigneeEntities(email: state.emailAssignee),
+          description: state.taskDescription.text,
+          assigneeEntities: assigneEnitites,
         ),
       );
     } else {
@@ -226,7 +234,7 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
         assigneeEntities: AssigneeEntities(email: state.emailAssignee),
         currentBoard: state.boardName,
         label: state.labelId,
-      ),
+      ),state.taskIdx!
     );
 
     emit(state.copyWith(

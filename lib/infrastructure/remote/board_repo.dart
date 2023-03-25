@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fpdart/fpdart.dart';
@@ -19,7 +20,7 @@ abstract class BoardRepository {
 
   Future<Either<BoardFailure, Unit>> createTask(String boardName, TaskEntities taskEntities);
 
-  Future<Either<BoardFailure, Unit>> deleteTask(TaskEntities taskEntities);
+  Future<Either<BoardFailure, Unit>> deleteTask(TaskEntities taskEntities, int idx);
 }
 
 
@@ -114,20 +115,46 @@ class BoardRepositoryImplement implements BoardRepository {
   }
 
   @override
-  Future<Either<BoardFailure, Unit>> deleteTask(TaskEntities taskEntities) async {
+  Future<Either<BoardFailure, Unit>> deleteTask(TaskEntities taskEntities, int idx) async {
     final projectsId = await secureStorageRepository.getCurrentOpenedProject();
     final collection = _firestore.projectsCollection();
 
     final decoded = json.decode(json.encode(taskEntities));
 
-    final updateParam = {
-      '${taskEntities.currentBoard}.tasks': FieldValue.arrayRemove([decoded])
-    };
+    final updateParam = {'${taskEntities.currentBoard}.tasks': FieldValue.arrayRemove([decoded])};
 
+
+    // _firestore.runTransaction(
+    //   (transaction) async {
+    //     final snapshot = await transaction.get(collection.doc(projectsId));
+    //     // final docRef = await transaction.get(c)
+    //     // final DocumentReference =
+    //     // transaction.delete()
+    //     if (snapshot.exists) {
+    //       final data = snapshot.get(taskEntities.currentBoard!);
+    //       final boardEntities = BoardEntities.fromJson(json.decode(json.encode(data)));
+    //       // final deletedTask = snapshot.get('${taskEntities.currentBoard!}.tasks');
+    //       final deletedTask = boardEntities.tasks![idx];
+
+    //       log('deleteTask ${boardEntities.tasks![idx].toJson()}');
+    //       transaction.delete()
+    //       // log('message ${snapshot.get(taskEntities.currentBoard!)}');
+    //       // transaction.delete(snapshot.reference);
+    //       // if (projecEntities) {
+
+    //       // }
+    //     }
+    //   },
+    // );
 
     await collection.doc(projectsId).update(updateParam).onError((error, stackTrace) {
       left(BoardFailure.failToUpdate());
-    }).then((value) {});
+      log('onError $error');
+    }).then((value) {
+      log('deletedTask ${decoded}');
+    }).whenComplete(() {
+      log('completed');
+    });
 
     return right(unit);
   }
